@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">Movie List</string>
+    <string name="movie_poster_for_background_desc">MOVIE POSTER FOR BACKGROUND</string>
+    <string name="movie_poster_desc">MOVIE POSTER</string>
+    <string name="director_photo_desc">DIRECTOR PHOTO</string>
+    <string name="release_date">Release Date</string>
+    <string name="director">Director</string>
+    <string name="overview">Overview</string>
+
+    <string-array name="movie_name">
+        <item>A Star Is Born</item>
+        <item>Aquaman</item>
+        <item>Avengers: Infinity War</item>
+        <item>Bird Box</item>
+        <item>Bohemian Rhapsody</item>
+        <item>Bumblebee</item>
+        <item>Creed II</item>
+        <item>Deadpool</item>
+        <item>Glass</item>
+        <item>Venom</item>
+    </string-array>
+
+    <string-array name="movie_overview">
+        <item>Seasoned musician Jackson Maine discovers — and falls in love with — struggling artist Ally. She has just about given up on her dream to make it big as a singer — until Jack coaxes her into the spotlight. But even as Ally\'s career takes off, the personal side of their relationship is breaking down, as Jack fights an ongoing battle with his own internal demons.</item>
+        <item>Once home to the most advanced civilization on Earth, Atlantis is now an underwater kingdom ruled by the power-hungry King Orm. With a vast army at his disposal, Orm plans to conquer the remaining oceanic people and then the surface world. Standing in his way is Arthur Curry, Orm\'s half-human, half-Atlantean brother and true heir to the throne.</item>
+        <item>As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos, A despot of intergalactic infamy, his goal is to collect all six Infinity Stones, artifacts of unimaginable power, and use them to inflict his twisted will on all of reality. Everything the Avengers have fought for has led up to this moment - the fate of Earth and existence itself has never been more uncertain.</item>
+        <item>Five years after an ominous unseen presence drives most of society to suicide, a survivor and her two children make a desperate bid to reach safety.</item>
+        <item>Singer Freddie Mercury, guitarist Brian May, drummer Roger Taylor and bass guitarist John Deacon take the music world by storm when they form the rock \'n\' roll band Queen in 1970. Hit songs become instant classics. When Mercury\'s increasingly wild lifestyle starts to spiral out of control, Queen soon faces its greatest challenge yet – finding a way to keep the band together amid the success and excess.</item>
+        <item>On the run in the year 1987, Bumblebee finds refuge in a junkyard in a small Californian beach town. Charlie, on the cusp of turning 18 and trying to find her place in the world, discovers Bumblebee, battle-scarred and broken. When Charlie revives him, she quickly learns this is no ordinary yellow VW bug.</item>
+        <item>Between personal obligations and training for his next big fight against an opponent with ties to his family\'s past, Adonis Creed is up against the challenge of his life.</item>
+        <item>Deadpool tells the origin story of former Special Forces operative turned mercenary Wade Wilson, who after being subjected to a rogue experiment that leaves him with accelerated healing powers, adopts the alter ego Deadpool. Armed with his new abilities and a dark, twisted sense of humor, Deadpool hunts down the man who nearly destroyed his life.</item>
+        <item>In a series of escalating encounters, former security guard David Dunn uses his supernatural abilities to track Kevin Wendell Crumb, a disturbed man who has twenty-four personalities. Meanwhile, the shadowy presence of Elijah Price emerges as an orchestrator who holds secrets critical to both men.</item>
+        <item>Investigative journalist Eddie Brock attempts a comeback following a scandal, but accidentally becomes the host of Venom, a violent, super powerful alien symbiote. Soon, he must rely on his newfound powers to protect the world from a shadowy organization looking for a symbiote of their own.</item>
+    </string-array>
+
+    <array name="movie_photo">
+        <item>@drawable/poster_a_star</item>
+        <item>@drawable/poster_aquaman</item>
+        <item>@drawable/poster_avengerinfinity</item>
+        <item>@drawable/poster_birdbox</item>
+        <item>@drawable/poster_bohemian</item>
+        <item>@drawable/poster_bumblebee</item>
+        <item>@drawable/poster_creed</item>
+        <item>@drawable/poster_deadpool</item>
+        <item>@drawable/poster_glass</item>
+        <item>@drawable/poster_venom</item>
+    </array>
+
+    <array name="movie_director_photo">
+        <item>@drawable/star_direct</item>
+        <item>@drawable/aquaman_direct</item>
+        <item>@drawable/avenger_direct</item>
+        <item>@drawable/bird_direct</item>
+        <item>@drawable/bohemian_direct</item>
+        <item>@drawable/bumble_direct</item>
+        <item>@drawable/creed_direct</item>
+        <item>@drawable/deadpool_direct</item>
+        <item>@drawable/glass_direct</item>
+        <item>@drawable/venom_direct</item>
+    </array>
+
+    <string-array name="movie_release_date">
+        <item>October 5, 2018</item>
+        <item>December 21, 2018</item>
+        <item>April 27, 2018</item>
+        <item>November 12, 2018</item>
+        <item>November 2, 2018</item>
+        <item>December 21, 2018</item>
+        <item>November 21, 2018</item>
+        <item>February 12, 2016</item>
+        <item>January 18, 2019</item>
+        <item>October 5, 2018</item>
+    </string-array>
+
+    <string-array name="movie_director_name">
+        <item>Bradley Cooper</item>
+        <item>James Wan</item>
+        <item>Joe Russo</item>
+        <item>Susanne Bier</item>
+        <item>Bryan Singer</item>
+        <item>Travis Knight</item>
+        <item>Steven Caple Jr.</item>
+        <item>Tim Miller</item>
+        <item>M. Night Shyamalan</item>
+        <item>Ruben Fleischer</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+</resources>
