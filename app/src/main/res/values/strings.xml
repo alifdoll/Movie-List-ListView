@@ -87,9 +87,62 @@
         <item>Ruben Fleischer</item>
     </string-array>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="show_name">
+        <item>Arrow</item>
+        <item>Vikings</item>
+        <item>Rick and Morty</item>
+        <item>Supernatural</item>
+        <item>The Simpsons</item>
+        <item>The Flash</item>
+        <item>The Mandalorian</item>
+        <item>Family Guy</item>
+        <item>The Witcher</item>
+        <item>Doctor Who</item>
+    </string-array>
 
-    <!-- TODO: Remove or change this placeholder text -->
+    <array name="show_photo">
+        <item>@drawable/poster_arrow</item>
+        <item>@drawable/poster_vikings</item>
+        <item>@drawable/poster_rick</item>
+        <item>@drawable/poster_supernatural</item>
+        <item>@drawable/poster_simpson</item>
+        <item>@drawable/poster_flash</item>
+        <item>@drawable/poster_mandalorian</item>
+        <item>@drawable/poster_family_guy</item>
+        <item>@drawable/poster_witcher</item>
+        <item>@drawable/poster_doctor_who</item>
+    </array>
+
+    <string-array name="show_overview">
+        <item>Spoiled billionaire playboy Oliver Queen is missing and presumed dead when his yacht is lost at sea. He returns five years later a changed man, determined to clean up the city as a hooded vigilante armed with a bow.</item>
+        <item>The adventures of Ragnar Lothbrok, the greatest hero of his age. The series tells the sagas of Ragnar\'s band of Viking brothers and his family, as he rises to become King of the Viking tribes. As well as being a fearless warrior, Ragnar embodies the Norse traditions of devotion to the gods. Legend has it that he was a direct descendant of Odin, the god of war and warriors.</item>
+        <item>Rick is a mentally-unbalanced but scientifically-gifted old man who has recently reconnected with his family. He spends most of his time involving his young grandson Morty in dangerous, outlandish adventures throughout space and alternate universes. Compounded with Morty\'s already unstable family life, these events cause Morty much distress at home and school.</item>
+        <item>When they were boys, Sam and Dean Winchester lost their mother to a mysterious and demonic supernatural force. Subsequently, their father raised them to be soldiers. He taught them about the paranormal evil that lives in the dark corners and on the back roads of America, and he taught them how to kill it. Now, the Winchester brothers crisscross the country in their \'67 Chevy Impala, battling every kind of supernatural threat they encounter along the way. </item>
+        <item>Set in Springfield, the average American town, the show focuses on the antics and everyday adventures of the Simpson family; Homer, Marge, Bart, Lisa and Maggie, as well as a virtual cast of thousands. Since the beginning, the series has been a pop culture icon, attracting hundreds of celebrities to guest star. The show has also made name for itself in its fearless satirical take on politics, media and American life in general.</item>
+        <item>After a particle accelerator causes a freak storm, CSI Investigator Barry Allen is struck by lightning and falls into a coma. Months later he awakens with the power of super speed, granting him the ability to move through Central City like an unseen guardian angel. Though initially excited by his newfound powers, Barry is shocked to discover he is not the only "meta-human" who was created in the wake of the accelerator explosion and not everyone is using their new powers for good. Barry partners with S.T.A.R. Labs and dedicates his life to protect the innocent. For now, only a few close friends and associates know that Barry is literally the fastest man alive, but it won\'t be long before the world learns what Barry Allen has become , The Flash.</item>
+        <item>After the fall of the Galactic Empire, lawlessness has spread throughout the galaxy. A lone gunfighter makes his way through the outer reaches, earning his keep as a bounty hunter.</item>
+        <item>Sick, twisted, politically incorrect and Freakin\' Sweet animated series featuring the adventures of the dysfunctional Griffin family. Bumbling Peter and long-suffering Lois have three kids. Stewie (a brilliant but sadistic baby bent on killing his mother and taking over the world), Meg (the oldest, and is the most unpopular girl in town) and Chris (the middle kid, he\'s not very bright but has a passion for movies). The final member of the family is Brian - a talking dog and much more than a pet, he keeps Stewie in check whilst sipping Martinis and sorting through his own life issues.</item>
+        <item>Geralt of Rivia, a mutated monster-hunter for hire, journeys toward his destiny in a turbulent world where people often prove more wicked than beasts.</item>
+        <item>The Doctor is a Time Lord: a 900 year old alien with 2 hearts, part of a gifted civilization who mastered time travel. The Doctor saves planets for a living—more of a hobby actually, and the Doctor\'s very, very good at it.</item>
+    </string-array>
+
+    <string-array name="show_director_name">
+        <item>Greg Berlanti</item>
+        <item>Michael Hirst</item>
+        <item>Dan Harmon</item>
+        <item>Eric Kripke</item>
+        <item>Matt Groening</item>
+        <item>Greg Berlanti</item>
+        <item>Jon Favreu</item>
+        <item>Seth MacFarlane</item>
+        <item>Lauren Schimdt</item>
+        <item>Sydney Newman</item>
+    </string-array>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="movies">Movies</string>
+    <string name="shows">Tv Shows</string>
+
 
 </resources>
