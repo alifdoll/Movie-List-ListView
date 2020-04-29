@@ -67,11 +67,5 @@ public class MovieDetail extends AppCompatActivity {
         MovieDetail.this.overridePendingTransition(R.anim.enter_from_left,R.anim.exit_to_right);
     }
 
-    @Override
-    public void finish() {
-        super.finish();
-
-    }
-
 
 }
