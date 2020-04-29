@@ -77,11 +77,5 @@ public class MovieDetail extends AppCompatActivity {
 
     }
 
-    @Override
-    public void finish() {
-        super.finish();
-
-    }
-
 
 }
