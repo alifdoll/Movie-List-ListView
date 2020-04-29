@@ -14,8 +14,6 @@ import com.alif.submission.movielist.data.Movie;
 public class MovieDetail extends AppCompatActivity {
 
     public static final String EXTRA_MOVIE = "extra_movie";
-    public static final String EXTRA_SHOW = "extra_show";
-
     private boolean mov = true;
 
     public MovieDetail(){
