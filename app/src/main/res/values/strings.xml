@@ -6,6 +6,8 @@
     <string name="release_date">Release Date</string>
     <string name="director">Director</string>
     <string name="overview">Overview</string>
+    <string name="movie_content_desc">movie_poster</string>
+    <string name="movie_sample_name">Movie Title</string>
 
     <string-array name="movie_name">
         <item>A Star Is Born</item>
