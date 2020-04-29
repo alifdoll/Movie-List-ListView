@@ -11,6 +11,7 @@ public class Movie implements Parcelable {
     private String releaseDate;
     private String directorName;
     private String overview;
+    private boolean isMovie;
 
 
 
@@ -64,6 +65,14 @@ public class Movie implements Parcelable {
 
     public void setDirectorName(String directorName) {
         this.directorName = directorName;
+    }
+
+    public void isMovie(boolean isMovie) {
+        this.isMovie = isMovie;
+    }
+
+    public boolean getIsMovie() {
+        return isMovie;
     }
 
     protected Movie(Parcel in) {

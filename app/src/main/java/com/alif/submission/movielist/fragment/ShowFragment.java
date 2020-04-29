@@ -27,21 +27,21 @@ public class ShowFragment extends Fragment implements MovieAdapter.OnActionListe
 
 
     public ShowFragment() {
-        // Required empty public constructor
+
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_show, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        RecyclerView recyclerView = view.findViewById(R.id.rv_movie);
+        RecyclerView recyclerView = view.findViewById(R.id.rv_show);
 
         MovieAdapter adapter = new MovieAdapter(getListShow(), this);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -50,9 +50,9 @@ public class ShowFragment extends Fragment implements MovieAdapter.OnActionListe
     }
 
     private ArrayList<Movie> getListShow() {
-        String[] movieName = getResources().getStringArray(R.array.movie_name);
-        String[] movieOverview = getResources().getStringArray(R.array.movie_overview);
-        TypedArray moviePhoto = getResources().obtainTypedArray(R.array.movie_photo);
+        String[] movieName = getResources().getStringArray(R.array.show_name);
+        String[] movieOverview = getResources().getStringArray(R.array.show_overview);
+        TypedArray moviePhoto = getResources().obtainTypedArray(R.array.show_photo);
 
         ArrayList<Movie> listMovie = new ArrayList<Movie>() {
         };
@@ -61,6 +61,7 @@ public class ShowFragment extends Fragment implements MovieAdapter.OnActionListe
             movies.setName(movieName[idx]);
             movies.setOverview(movieOverview[idx]);
             movies.setPhoto(moviePhoto.getResourceId(idx, -1));
+            movies.isMovie(false);
             listMovie.add(movies);
         }
         return listMovie;

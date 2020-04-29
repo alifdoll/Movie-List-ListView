@@ -26,14 +26,14 @@ public class MovieFragment extends Fragment implements MovieAdapter.OnActionList
 
 
     public MovieFragment() {
-        // Required empty public constructor
+
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_movie, container, false);
     }
 
@@ -61,6 +61,7 @@ public class MovieFragment extends Fragment implements MovieAdapter.OnActionList
             movies.setName(movieName[idx]);
             movies.setOverview(movieOverview[idx]);
             movies.setPhoto(moviePhoto.getResourceId(idx, -1));
+            movies.isMovie(true);
             listMovie.add(movies);
         }
         return listMovie;
