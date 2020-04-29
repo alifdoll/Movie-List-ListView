@@ -1,4 +1,4 @@
-package com.alif.submission.movielist;
+package com.alif.submission.movielist.data;
 
 import android.os.Parcel;
 import android.os.Parcelable;

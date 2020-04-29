@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context="com.alif.submission.movielist.fragment.MovieFragment">
 
 
-
-    <ListView
-        android:id="@+id/lv_list"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_show"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/item_movie"/>
 
 </LinearLayout>

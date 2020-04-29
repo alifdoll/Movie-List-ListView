@@ -9,6 +9,9 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.alif.submission.movielist.adapter.MovieAdapter;
+import com.alif.submission.movielist.data.Movie;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {

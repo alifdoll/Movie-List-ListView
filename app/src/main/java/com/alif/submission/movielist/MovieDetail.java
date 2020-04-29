@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.alif.submission.movielist.data.Movie;
+
 public class MovieDetail extends AppCompatActivity {
 
     static final String EXTRA_MOVIE = "extra_movie";
