@@ -58,7 +58,7 @@ public class MovieAdapter extends BaseAdapter {
         private ImageView imgPhoto;
 
         ViewHolder(View view){
-            txtName = view.findViewById(R.id.movie_name);
+            txtName = view.findViewById(R.id.movie_title);
             txtOverview = view.findViewById(R.id.movie_overview);
             imgPhoto = view.findViewById(R.id.movie_photo);
         }
