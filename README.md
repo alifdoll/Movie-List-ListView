@@ -5,5 +5,5 @@ This repository contains many branch with different features and different imple
 
 # Feature
 1.using listview
-2.only showing movies
-3.movie data is locally stored.
+\n2.only showing movies
+\n3.movie data is locally stored.
