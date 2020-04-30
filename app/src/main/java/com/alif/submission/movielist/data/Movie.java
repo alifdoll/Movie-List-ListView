@@ -1,4 +1,4 @@
-package com.alif.submission.movielist;
+package com.alif.submission.movielist.data;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -6,11 +6,9 @@ import android.os.Parcelable;
 public class Movie implements Parcelable {
 
     private int photo;
-    private int directorPhoto;
     private String name;
-    private String releaseDate;
-    private String directorName;
     private String overview;
+    private boolean isMovie;
 
 
 
@@ -34,13 +32,6 @@ public class Movie implements Parcelable {
         this.name = name;
     }
 
-    public String getReleaseDate() {
-        return releaseDate;
-    }
-
-    public void setReleaseDate(String releaseDate) {
-        this.releaseDate = releaseDate;
-    }
 
     public String getOverview() {
         return overview;
@@ -50,38 +41,24 @@ public class Movie implements Parcelable {
         this.overview = overview;
     }
 
-    public int getDirectorPhoto() {
-        return directorPhoto;
+    public void isMovie(boolean isMovie) {
+        this.isMovie = isMovie;
     }
 
-    public void setDirectorPhoto(int directorPhoto) {
-        this.directorPhoto = directorPhoto;
-    }
-
-    public String getDirectorName() {
-        return directorName;
-    }
-
-    public void setDirectorName(String directorName) {
-        this.directorName = directorName;
+    public boolean getIsMovie() {
+        return isMovie;
     }
 
     protected Movie(Parcel in) {
         photo = in.readInt();
-        directorPhoto = in.readInt();
         name = in.readString();
-        directorName = in.readString();
-        releaseDate = in.readString();
         overview = in.readString();
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(photo);
-        dest.writeInt(directorPhoto);
         dest.writeString(name);
-        dest.writeString(directorName);
-        dest.writeString(releaseDate);
         dest.writeString(overview);
     }
 

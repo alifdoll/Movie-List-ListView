@@ -120,63 +120,6 @@
             android:textSize="16sp"
             tools:text="@tools:sample/lorem[36]" />
 
-        <TextView
-            android:id="@+id/tv_movie_director"
-            style="@style/subText"
-            android:layout_width="88dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="40dp"
-            android:text="@string/director"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/movie_synops" />
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/movie_img_director"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_movie_director"
-            tools:src="@drawable/poster_glass"
-            android:contentDescription="@string/director_photo_desc"/>
-
-        <TextView
-            android:id="@+id/tv_director_name"
-            style="@style/TextAppearance.AppCompat.Body2"
-            android:layout_width="104dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_movie_director"
-            android:layout_toEndOf="@+id/movie_img_director"
-            android:layout_marginTop="24dp"
-            android:layout_marginStart="16dp"
-            app:layout_constraintStart_toEndOf="@+id/movie_img_director"
-            app:layout_constraintTop_toBottomOf="@+id/tv_movie_director"
-            tools:text="@tools:sample/lorem" />
-
-        <TextView
-            android:id="@+id/tv_movie_date"
-            style="@style/subText"
-            android:layout_width="112dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_marginStart="104dp"
-            android:text="@string/release_date"
-            app:layout_constraintStart_toEndOf="@+id/tv_movie_director"
-            app:layout_constraintTop_toBottomOf="@+id/movie_synops" />
-
-        <TextView
-            android:id="@+id/tv_movie_release_date"
-            style="@style/TextAppearance.AppCompat.Body2"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="56dp"
-            android:layout_marginTop="24dp"
-            app:layout_constraintStart_toEndOf="@+id/tv_director_name"
-            app:layout_constraintTop_toBottomOf="@+id/tv_movie_date"
-            tools:text="@tools:sample/lorem" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
