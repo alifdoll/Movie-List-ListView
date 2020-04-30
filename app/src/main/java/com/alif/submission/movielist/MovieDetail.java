@@ -1,12 +1,16 @@
 package com.alif.submission.movielist;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.alif.submission.movielist.data.Movie;
@@ -19,6 +23,13 @@ public class MovieDetail extends AppCompatActivity {
     public MovieDetail(){
 
     }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull String name, @NonNull Context context, @NonNull AttributeSet attrs) {
+        return super.onCreateView(name, context, attrs);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
