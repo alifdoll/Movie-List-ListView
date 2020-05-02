@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,6 +30,7 @@ public class MovieFragment extends Fragment implements OnActionListener {
 
     private MovieAdapter adapter;
     private MovieMainViewModel mainViewModel;
+    private ProgressBar progressBar;
 
     public MovieFragment() {
 
@@ -47,7 +49,7 @@ public class MovieFragment extends Fragment implements OnActionListener {
         super.onViewCreated(view, savedInstanceState);
 
         RecyclerView rv = view.findViewById(R.id.rv_movie);
-
+        progressBar = view.findViewById(R.id.id_progress);
         adapter = new MovieAdapter();
         mainViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(MovieMainViewModel.class);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -55,16 +57,25 @@ public class MovieFragment extends Fragment implements OnActionListener {
         rv.addItemDecoration(new DividerItemDecoration(rv.getContext(), DividerItemDecoration.VERTICAL));
 
         mainViewModel.setMovie();
+        showLoading(true);
         mainViewModel.getMovie().observe(getViewLifecycleOwner(), new Observer<ArrayList<MovieItem>>() {
             @Override
             public void onChanged(ArrayList<MovieItem> movieItems) {
                 if (movieItems != null) {
                     adapter.setData(movieItems, MovieFragment.this);
+                    showLoading(false);
                 }
             }
         });
     }
 
+    private void showLoading(Boolean state) {
+        if (state) {
+            progressBar.setVisibility(View.VISIBLE);
+        } else {
+            progressBar.setVisibility(View.GONE);
+        }
+    }
 
     @Override
     public void startActivity(int position) {

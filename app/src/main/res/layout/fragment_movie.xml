@@ -7,6 +7,12 @@
     android:orientation="vertical"
     tools:context="fragment.MovieFragment">
 
+    <ProgressBar
+        android:id="@+id/id_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_movie"
         android:layout_width="match_parent"
