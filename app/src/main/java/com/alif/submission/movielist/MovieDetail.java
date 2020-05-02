@@ -14,7 +14,7 @@ import com.alif.submission.movielist.data.Movie;
 public class MovieDetail extends AppCompatActivity {
 
     public static final String EXTRA_MOVIE = "extra_movie";
-    private boolean mov = true;
+    private boolean mov = getIntent().getBooleanExtra(EXTRA_MOVIE, true);
 
     public MovieDetail(){
 
@@ -38,11 +38,10 @@ public class MovieDetail extends AppCompatActivity {
         Movie movie = getIntent().getParcelableExtra(EXTRA_MOVIE);
 
 
-        if (movie.getIsMovie()) {
+        if (mov) {
             this.overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
         } else {
             this.overridePendingTransition(R.anim.enter_from_left, R.anim.exit_to_right);
-            mov = movie.getIsMovie();
         }
 
         tvMovieName.setText(movie.getName());

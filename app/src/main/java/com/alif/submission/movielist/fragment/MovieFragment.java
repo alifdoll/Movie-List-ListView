@@ -72,6 +72,7 @@ public class MovieFragment extends Fragment implements MovieAdapter.OnActionList
         Movie movie = getListMovie().get(position);
         Intent intent = new Intent(getActivity(), MovieDetail.class);
         intent.putExtra(MovieDetail.EXTRA_MOVIE, movie);
+        intent.putExtra(MovieDetail.EXTRA_MOVIE, true);
         startActivity(intent);
     }
 }

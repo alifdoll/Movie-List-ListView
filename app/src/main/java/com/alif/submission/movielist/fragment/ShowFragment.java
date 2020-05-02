@@ -72,6 +72,7 @@ public class ShowFragment extends Fragment implements MovieAdapter.OnActionListe
         Movie movie = getListShow().get(position);
         Intent intent = new Intent(getActivity(), MovieDetail.class);
         intent.putExtra(MovieDetail.EXTRA_MOVIE, movie);
+        intent.putExtra(MovieDetail.EXTRA_MOVIE, false);
         startActivity(intent);
     }
 }
