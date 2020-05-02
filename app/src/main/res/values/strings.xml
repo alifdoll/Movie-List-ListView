@@ -9,140 +9,15 @@
     <string name="movie_content_desc">movie_poster</string>
     <string name="movie_sample_name">Movie Title</string>
 
-    <string-array name="movie_name">
-        <item>A Star Is Born</item>
-        <item>Aquaman</item>
-        <item>Avengers: Infinity War</item>
-        <item>Bird Box</item>
-        <item>Bohemian Rhapsody</item>
-        <item>Bumblebee</item>
-        <item>Creed II</item>
-        <item>Deadpool</item>
-        <item>Glass</item>
-        <item>Venom</item>
-    </string-array>
-
-    <string-array name="movie_overview">
-        <item>Seasoned musician Jackson Maine discovers — and falls in love with — struggling artist Ally. She has just about given up on her dream to make it big as a singer — until Jack coaxes her into the spotlight. But even as Ally\'s career takes off, the personal side of their relationship is breaking down, as Jack fights an ongoing battle with his own internal demons.</item>
-        <item>Once home to the most advanced civilization on Earth, Atlantis is now an underwater kingdom ruled by the power-hungry King Orm. With a vast army at his disposal, Orm plans to conquer the remaining oceanic people and then the surface world. Standing in his way is Arthur Curry, Orm\'s half-human, half-Atlantean brother and true heir to the throne.</item>
-        <item>As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos, A despot of intergalactic infamy, his goal is to collect all six Infinity Stones, artifacts of unimaginable power, and use them to inflict his twisted will on all of reality. Everything the Avengers have fought for has led up to this moment - the fate of Earth and existence itself has never been more uncertain.</item>
-        <item>Five years after an ominous unseen presence drives most of society to suicide, a survivor and her two children make a desperate bid to reach safety.</item>
-        <item>Singer Freddie Mercury, guitarist Brian May, drummer Roger Taylor and bass guitarist John Deacon take the music world by storm when they form the rock \'n\' roll band Queen in 1970. Hit songs become instant classics. When Mercury\'s increasingly wild lifestyle starts to spiral out of control, Queen soon faces its greatest challenge yet – finding a way to keep the band together amid the success and excess.</item>
-        <item>On the run in the year 1987, Bumblebee finds refuge in a junkyard in a small Californian beach town. Charlie, on the cusp of turning 18 and trying to find her place in the world, discovers Bumblebee, battle-scarred and broken. When Charlie revives him, she quickly learns this is no ordinary yellow VW bug.</item>
-        <item>Between personal obligations and training for his next big fight against an opponent with ties to his family\'s past, Adonis Creed is up against the challenge of his life.</item>
-        <item>Deadpool tells the origin story of former Special Forces operative turned mercenary Wade Wilson, who after being subjected to a rogue experiment that leaves him with accelerated healing powers, adopts the alter ego Deadpool. Armed with his new abilities and a dark, twisted sense of humor, Deadpool hunts down the man who nearly destroyed his life.</item>
-        <item>In a series of escalating encounters, former security guard David Dunn uses his supernatural abilities to track Kevin Wendell Crumb, a disturbed man who has twenty-four personalities. Meanwhile, the shadowy presence of Elijah Price emerges as an orchestrator who holds secrets critical to both men.</item>
-        <item>Investigative journalist Eddie Brock attempts a comeback following a scandal, but accidentally becomes the host of Venom, a violent, super powerful alien symbiote. Soon, he must rely on his newfound powers to protect the world from a shadowy organization looking for a symbiote of their own.</item>
-    </string-array>
-
-    <array name="movie_photo">
-        <item>@drawable/poster_a_star</item>
-        <item>@drawable/poster_aquaman</item>
-        <item>@drawable/poster_avengerinfinity</item>
-        <item>@drawable/poster_birdbox</item>
-        <item>@drawable/poster_bohemian</item>
-        <item>@drawable/poster_bumblebee</item>
-        <item>@drawable/poster_creed</item>
-        <item>@drawable/poster_deadpool</item>
-        <item>@drawable/poster_glass</item>
-        <item>@drawable/poster_venom</item>
-    </array>
-
-    <array name="movie_director_photo">
-        <item>@drawable/star_direct</item>
-        <item>@drawable/aquaman_direct</item>
-        <item>@drawable/avenger_direct</item>
-        <item>@drawable/bird_direct</item>
-        <item>@drawable/bohemian_direct</item>
-        <item>@drawable/bumble_direct</item>
-        <item>@drawable/creed_direct</item>
-        <item>@drawable/deadpool_direct</item>
-        <item>@drawable/glass_direct</item>
-        <item>@drawable/venom_direct</item>
-    </array>
-
-    <string-array name="movie_release_date">
-        <item>October 5, 2018</item>
-        <item>December 21, 2018</item>
-        <item>April 27, 2018</item>
-        <item>November 12, 2018</item>
-        <item>November 2, 2018</item>
-        <item>December 21, 2018</item>
-        <item>November 21, 2018</item>
-        <item>February 12, 2016</item>
-        <item>January 18, 2019</item>
-        <item>October 5, 2018</item>
-    </string-array>
-
-    <string-array name="movie_director_name">
-        <item>Bradley Cooper</item>
-        <item>James Wan</item>
-        <item>Joe Russo</item>
-        <item>Susanne Bier</item>
-        <item>Bryan Singer</item>
-        <item>Travis Knight</item>
-        <item>Steven Caple Jr.</item>
-        <item>Tim Miller</item>
-        <item>M. Night Shyamalan</item>
-        <item>Ruben Fleischer</item>
-    </string-array>
-
-    <string-array name="show_name">
-        <item>Arrow</item>
-        <item>Vikings</item>
-        <item>Rick and Morty</item>
-        <item>Supernatural</item>
-        <item>The Simpsons</item>
-        <item>The Flash</item>
-        <item>The Mandalorian</item>
-        <item>Family Guy</item>
-        <item>The Witcher</item>
-        <item>Doctor Who</item>
-    </string-array>
-
-    <array name="show_photo">
-        <item>@drawable/poster_arrow</item>
-        <item>@drawable/poster_vikings</item>
-        <item>@drawable/poster_rick</item>
-        <item>@drawable/poster_supernatural</item>
-        <item>@drawable/poster_simpson</item>
-        <item>@drawable/poster_flash</item>
-        <item>@drawable/poster_mandalorian</item>
-        <item>@drawable/poster_family_guy</item>
-        <item>@drawable/poster_witcher</item>
-        <item>@drawable/poster_doctor_who</item>
-    </array>
-
-    <string-array name="show_overview">
-        <item>Spoiled billionaire playboy Oliver Queen is missing and presumed dead when his yacht is lost at sea. He returns five years later a changed man, determined to clean up the city as a hooded vigilante armed with a bow.</item>
-        <item>The adventures of Ragnar Lothbrok, the greatest hero of his age. The series tells the sagas of Ragnar\'s band of Viking brothers and his family, as he rises to become King of the Viking tribes. As well as being a fearless warrior, Ragnar embodies the Norse traditions of devotion to the gods. Legend has it that he was a direct descendant of Odin, the god of war and warriors.</item>
-        <item>Rick is a mentally-unbalanced but scientifically-gifted old man who has recently reconnected with his family. He spends most of his time involving his young grandson Morty in dangerous, outlandish adventures throughout space and alternate universes. Compounded with Morty\'s already unstable family life, these events cause Morty much distress at home and school.</item>
-        <item>When they were boys, Sam and Dean Winchester lost their mother to a mysterious and demonic supernatural force. Subsequently, their father raised them to be soldiers. He taught them about the paranormal evil that lives in the dark corners and on the back roads of America, and he taught them how to kill it. Now, the Winchester brothers crisscross the country in their \'67 Chevy Impala, battling every kind of supernatural threat they encounter along the way. </item>
-        <item>Set in Springfield, the average American town, the show focuses on the antics and everyday adventures of the Simpson family; Homer, Marge, Bart, Lisa and Maggie, as well as a virtual cast of thousands. Since the beginning, the series has been a pop culture icon, attracting hundreds of celebrities to guest star. The show has also made name for itself in its fearless satirical take on politics, media and American life in general.</item>
-        <item>After a particle accelerator causes a freak storm, CSI Investigator Barry Allen is struck by lightning and falls into a coma. Months later he awakens with the power of super speed, granting him the ability to move through Central City like an unseen guardian angel. Though initially excited by his newfound powers, Barry is shocked to discover he is not the only "meta-human" who was created in the wake of the accelerator explosion and not everyone is using their new powers for good. Barry partners with S.T.A.R. Labs and dedicates his life to protect the innocent. For now, only a few close friends and associates know that Barry is literally the fastest man alive, but it won\'t be long before the world learns what Barry Allen has become , The Flash.</item>
-        <item>After the fall of the Galactic Empire, lawlessness has spread throughout the galaxy. A lone gunfighter makes his way through the outer reaches, earning his keep as a bounty hunter.</item>
-        <item>Sick, twisted, politically incorrect and Freakin\' Sweet animated series featuring the adventures of the dysfunctional Griffin family. Bumbling Peter and long-suffering Lois have three kids. Stewie (a brilliant but sadistic baby bent on killing his mother and taking over the world), Meg (the oldest, and is the most unpopular girl in town) and Chris (the middle kid, he\'s not very bright but has a passion for movies). The final member of the family is Brian - a talking dog and much more than a pet, he keeps Stewie in check whilst sipping Martinis and sorting through his own life issues.</item>
-        <item>Geralt of Rivia, a mutated monster-hunter for hire, journeys toward his destiny in a turbulent world where people often prove more wicked than beasts.</item>
-        <item>The Doctor is a Time Lord: a 900 year old alien with 2 hearts, part of a gifted civilization who mastered time travel. The Doctor saves planets for a living—more of a hobby actually, and the Doctor\'s very, very good at it.</item>
-    </string-array>
-
-    <string-array name="show_director_name">
-        <item>Greg Berlanti</item>
-        <item>Michael Hirst</item>
-        <item>Dan Harmon</item>
-        <item>Eric Kripke</item>
-        <item>Matt Groening</item>
-        <item>Greg Berlanti</item>
-        <item>Jon Favreu</item>
-        <item>Seth MacFarlane</item>
-        <item>Lauren Schimdt</item>
-        <item>Sydney Newman</item>
-    </string-array>
-
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="movies">Movies</string>
     <string name="shows">Tv Shows</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="favorites">Favorites</string>
 
 
 </resources>

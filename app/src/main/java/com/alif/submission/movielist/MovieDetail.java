@@ -13,12 +13,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.alif.submission.movielist.data.Movie;
+import com.alif.submission.movielist.data.MovieItem;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 public class MovieDetail extends AppCompatActivity {
 
     public static final String EXTRA_MOVIE = "extra_movie";
-    private boolean mov = true;
+    private boolean mov = getIntent().getBooleanExtra("IS SHOW", false);
 
     public MovieDetail(){
 
@@ -46,23 +48,31 @@ public class MovieDetail extends AppCompatActivity {
         rb.setRating(5);
 
 
-        Movie movie = getIntent().getParcelableExtra(EXTRA_MOVIE);
+        MovieItem movie = getIntent().getParcelableExtra(EXTRA_MOVIE);
 
+        this.overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
+//        if (!mov) {
+//            this.overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
+//        } else {
+//            this.overridePendingTransition(R.anim.enter_from_left, R.anim.exit_to_right);
+//        }
 
-        if (movie.getIsMovie()) {
-            this.overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
-        } else {
-            this.overridePendingTransition(R.anim.enter_from_left, R.anim.exit_to_right);
-            mov = movie.getIsMovie();
-        }
-
-        tvMovieName.setText(movie.getName());
+        tvMovieName.setText(movie.getTitle());
         tvMovieOverview.setText(movie.getOverview());
 
-        ivMoviePhoto.setImageResource(movie.getPhoto());
-        ivMovieBg.setImageResource(movie.getPhoto());
+        Glide.with(this)
+                .load(movie.getPoster_path())
+                .apply(new RequestOptions())
+                .into(ivMoviePhoto);
 
-        getSupportActionBar().setTitle(movie.getName());
+        Glide.with(this)
+                .load(movie.getPoster_path())
+                .apply(new RequestOptions())
+                .into(ivMovieBg);
+//        ivMoviePhoto.setImageResource(movie.getPhoto());
+//        ivMovieBg.setImageResource(movie.getPhoto());
+
+        getSupportActionBar().setTitle(movie.getTitle());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
@@ -78,11 +88,12 @@ public class MovieDetail extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        if (mov) {
-            MovieDetail.this.overridePendingTransition(R.anim.enter_from_left, R.anim.exit_to_right);
-        } else {
-            MovieDetail.this.overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
-        }
+        MovieDetail.this.overridePendingTransition(R.anim.enter_from_left, R.anim.exit_to_right);
+//        if (!mov) {
+//            MovieDetail.this.overridePendingTransition(R.anim.enter_from_left, R.anim.exit_to_right);
+//        } else {
+//            MovieDetail.this.overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
+//        }
 
     }
 
