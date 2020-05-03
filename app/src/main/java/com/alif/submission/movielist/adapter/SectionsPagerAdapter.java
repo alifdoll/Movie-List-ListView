@@ -10,7 +10,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.alif.submission.movielist.R;
+import com.alif.submission.movielist.fragment.MovieFavoriteFragment;
 import com.alif.submission.movielist.fragment.MovieFragment;
+import com.alif.submission.movielist.fragment.ShowFavoriteFragment;
 import com.alif.submission.movielist.fragment.ShowFragment;
 
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
@@ -33,11 +35,11 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         Fragment fragment = null;
         switch (position) {
             case 0:
-                fragment = new MovieFragment();
+                fragment = new MovieFavoriteFragment();
                 break;
 
             case 1:
-                fragment = new ShowFragment();
+                fragment = new ShowFavoriteFragment();
                 break;
         }
         return fragment;

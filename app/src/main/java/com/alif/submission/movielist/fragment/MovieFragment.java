@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.alif.submission.movielist.MovieDetail;
+import com.alif.submission.movielist.detail.MovieDetail;
 import com.alif.submission.movielist.OnActionListener;
 import com.alif.submission.movielist.R;
 import com.alif.submission.movielist.adapter.MovieAdapter;

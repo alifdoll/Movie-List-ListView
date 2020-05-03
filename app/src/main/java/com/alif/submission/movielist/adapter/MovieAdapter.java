@@ -4,8 +4,10 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -40,20 +42,22 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ListViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ListViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final ListViewHolder holder, final int position) {
         final MovieItem movie = listOfMovie.get(position);
 
-        Glide.with(holder.itemView.getContext())
-                .load(movie.getPoster_path())
-                .apply(new RequestOptions())
-                .into(holder.moviePhoto);
-
-        holder.movieName.setText(movie.getTitle());
-        holder.movieOverview.setText(movie.getOverview());
+        holder.BindData(movie, holder);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                listener.startActivity(position);
+            }
+        });
 
+        holder.btnAddFav.setText(R.string.add_to_fav);
+        holder.btnAddFav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(holder.itemView.getContext(), "Added To Favorite " + movie.getTitle() , Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -67,13 +71,24 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ListViewHold
     class ListViewHolder extends RecyclerView.ViewHolder {
         TextView movieName,movieOverview;
         ImageView moviePhoto;
+        Button btnAddFav;
 
         ListViewHolder(@NonNull View itemView) {
             super(itemView);
             movieName = itemView.findViewById(R.id.movie_title);
             movieOverview = itemView.findViewById(R.id.movie_overview);
             moviePhoto = itemView.findViewById(R.id.movie_photo);
+            btnAddFav = itemView.findViewById(R.id.movie_button_add_favorite);
+        }
 
+        void BindData(MovieItem movie, ListViewHolder holder){
+            Glide.with(holder.itemView.getContext())
+                    .load(movie.getPoster_path())
+                    .apply(new RequestOptions())
+                    .into(holder.moviePhoto);
+
+            holder.movieName.setText(movie.getTitle());
+            holder.movieOverview.setText(movie.getOverview());
         }
     }
 

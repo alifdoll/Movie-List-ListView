@@ -7,17 +7,18 @@
     android:orientation="vertical"
     tools:context="fragment.MovieFragment">
 
-    <ProgressBar
-        android:id="@+id/id_progress"
-        style="?android:attr/progressBarStyle"
+    <TextView
+        android:id="@+id/no_data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
+        tools:text="NO DATA"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
         android:visibility="gone"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_movie"
+        android:id="@+id/rv_show_fav"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/item_movie"/>

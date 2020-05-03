@@ -1,4 +1,4 @@
-package com.alif.submission.movielist;
+package com.alif.submission.movielist.detail;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.alif.submission.movielist.R;
 import com.alif.submission.movielist.data.MovieItem;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -20,7 +21,7 @@ import com.bumptech.glide.request.RequestOptions;
 public class MovieDetail extends AppCompatActivity {
 
     public static final String EXTRA_MOVIE = "extra_movie";
-    private boolean mov = getIntent().getBooleanExtra("IS SHOW", false);
+    //private boolean mov = getIntent().getBooleanExtra("IS SHOW", false);
 
     public MovieDetail(){
 
