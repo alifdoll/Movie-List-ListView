@@ -32,7 +32,7 @@ import java.util.List;
  */
 public class MovieFavoriteFragment extends Fragment implements OnActionListener {
 
-    final List<MovieItem> listOfMovie = new ArrayList<>();
+    private final List<MovieItem> listOfMovie = new ArrayList<>();
     private MovieAdapter adapter;
     private TextView textView;
 

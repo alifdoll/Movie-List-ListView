@@ -53,13 +53,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ListViewHold
         notifyItemRangeChanged(position, listOfMovie.size());
     }
 
-//    public void setData(Context context, List<MovieItem> movies, OnActionListener onActionListener) {
-//        listOfMovie.clear();
-//        listOfMovie.addAll(movies);
-//        listener = onActionListener;
-//        mContext = context;
-//        database =  MovieDatabase.getInstance(context).getMovieDao();
-//    }
 
 
     @NonNull
