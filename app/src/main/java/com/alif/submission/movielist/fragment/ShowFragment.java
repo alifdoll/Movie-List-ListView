@@ -17,11 +17,11 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.alif.submission.movielist.detail.MovieDetail;
 import com.alif.submission.movielist.OnActionListener;
 import com.alif.submission.movielist.R;
 import com.alif.submission.movielist.adapter.MovieAdapter;
 import com.alif.submission.movielist.data.MovieItem;
+import com.alif.submission.movielist.detail.MovieDetail;
 import com.alif.submission.movielist.viewmodel.MovieMainViewModel;
 
 import java.util.ArrayList;
@@ -64,7 +64,7 @@ public class ShowFragment extends Fragment implements OnActionListener {
             @Override
             public void onChanged(ArrayList<MovieItem> movieItems) {
                 if (movieItems != null) {
-                    adapter.setData(movieItems, ShowFragment.this);
+                    adapter.setData(getContext(), movieItems, ShowFragment.this);
                     showLoading(false);
                 }
             }

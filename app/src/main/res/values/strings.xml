@@ -20,6 +20,7 @@
     <string name="favorites">Favorites</string>
     <string name="no_data">NO DATA</string>
     <string name="add_to_fav">ADD TO FAVORITE</string>
+    <string name="remove_from_fav">Remove From Favorite</string>
 
 
 </resources>

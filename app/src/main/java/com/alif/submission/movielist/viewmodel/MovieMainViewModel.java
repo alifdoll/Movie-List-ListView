@@ -49,6 +49,7 @@ public class MovieMainViewModel extends ViewModel {
                         movie.setOverview(item.getString("overview"));
                         movie.setFavorite(false);
                         movie.setPoster_path(POSTER_PATH + POSTER_SIZE + item.getString("poster_path"));
+                        movie.setType("movie");
                         listItems.add(movie);
                     }
                     listMovie.postValue(listItems);
@@ -83,16 +84,17 @@ public class MovieMainViewModel extends ViewModel {
 
                     for (int i = 0; i < list.length(); i++) {
 
-                        JSONObject show = list.getJSONObject(i);
-                        MovieItem item = new MovieItem();
+                        JSONObject item = list.getJSONObject(i);
+                        MovieItem show = new MovieItem();
 
-//                        item.setId(show.getInt("id"));
-                        item.setId(i);
-                        item.setTitle(show.getString("name"));
-                        item.setOverview(show.getString("overview"));
-                        item.setFavorite(false);
-                        item.setPoster_path(POSTER_PATH + POSTER_SIZE + show.getString("poster_path"));
-                        listItems.add(item);
+//                        show.setId(item.getInt("id"));
+                        show.setId(item.getInt("id"));
+                        show.setTitle(item.getString("name"));
+                        show.setOverview(item.getString("overview"));
+                        show.setFavorite(false);
+                        show.setPoster_path(POSTER_PATH + POSTER_SIZE + item.getString("poster_path"));
+                        show.setType("show");
+                        listItems.add(show);
                     }
                     listMovie.postValue(listItems);
                 } catch (Exception e) {

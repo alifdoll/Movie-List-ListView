@@ -3,6 +3,12 @@ package com.alif.submission.movielist.data;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "favorite")
 public class MovieItem implements Parcelable {
 
     public static final Creator<MovieItem> CREATOR = new Creator<MovieItem>() {
@@ -16,10 +22,22 @@ public class MovieItem implements Parcelable {
             return new MovieItem[size];
         }
     };
+    @PrimaryKey
     private int id;
+
+    @ColumnInfo(name = "title")
     private String title;
+
+    @ColumnInfo(name = "overview")
     private String overview;
+
+    @ColumnInfo(name = "poster_path")
     private String poster_path;
+
+    @ColumnInfo(name = "type")
+    private String type;
+
+    @Ignore
     private boolean favorite;
 
     public MovieItem() {
@@ -32,6 +50,7 @@ public class MovieItem implements Parcelable {
         overview = in.readString();
         poster_path = in.readString();
         favorite = in.readByte() != 0;
+        type = in.readString();
     }
 
     @Override
@@ -46,6 +65,7 @@ public class MovieItem implements Parcelable {
         dest.writeString(overview);
         dest.writeString(poster_path);
         dest.writeByte((byte) (favorite ? 1 : 0));
+        dest.writeString(type);
     }
 
     public int getId() {
@@ -88,5 +108,11 @@ public class MovieItem implements Parcelable {
         this.favorite = favorite;
     }
 
+    public String getType() {
+        return type;
+    }
 
+    public void setType(String type) {
+        this.type = type;
+    }
 }
