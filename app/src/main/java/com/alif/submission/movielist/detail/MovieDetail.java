@@ -5,9 +5,6 @@ import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.RatingBar;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.alif.submission.movielist.R;
 import com.alif.submission.movielist.data.MovieItem;
+import com.alif.submission.movielist.databinding.MovieDetailBinding;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
@@ -22,7 +20,7 @@ public class MovieDetail extends AppCompatActivity {
 
     public static final String EXTRA_MOVIE = "extra_movie";
     //private boolean mov = getIntent().getBooleanExtra("IS SHOW", false);
-
+    private MovieDetailBinding binding;
     public MovieDetail(){
 
     }
@@ -37,46 +35,33 @@ public class MovieDetail extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.movie_detail);
+        binding = MovieDetailBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
 
-        ImageView ivMoviePhoto = findViewById(R.id.movie_img);
-        ImageView ivMovieBg = findViewById(R.id.movie_poster_bg);
-        TextView tvMovieName = findViewById(R.id.movie_name);
-        TextView tvMovieOverview = findViewById(R.id.movie_synops);
-
-        RatingBar rb = findViewById(R.id.movie_rating);
-        rb.setRating(5);
 
 
         MovieItem movie = getIntent().getParcelableExtra(EXTRA_MOVIE);
 
-        this.overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
-//        if (!mov) {
-//            this.overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
-//        } else {
-//            this.overridePendingTransition(R.anim.enter_from_left, R.anim.exit_to_right);
-//        }
 
-        tvMovieName.setText(movie.getTitle());
-        tvMovieOverview.setText(movie.getOverview());
+        binding.movieName.setText(movie.getTitle());
+        binding.movieSynops.setText(movie.getOverview());
+        binding.movieRating.setRating(5);
+        Glide.with(this)
+                .load(movie.getPoster_path())
+                .apply(new RequestOptions())
+                .into(binding.movieImg);
 
         Glide.with(this)
                 .load(movie.getPoster_path())
                 .apply(new RequestOptions())
-                .into(ivMoviePhoto);
-
-        Glide.with(this)
-                .load(movie.getPoster_path())
-                .apply(new RequestOptions())
-                .into(ivMovieBg);
-//        ivMoviePhoto.setImageResource(movie.getPhoto());
-//        ivMovieBg.setImageResource(movie.getPhoto());
+                .into(binding.moviePosterBg);
 
         getSupportActionBar().setTitle(movie.getTitle());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
+        this.overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
     }
 
 
@@ -90,12 +75,6 @@ public class MovieDetail extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         MovieDetail.this.overridePendingTransition(R.anim.enter_from_left, R.anim.exit_to_right);
-//        if (!mov) {
-//            MovieDetail.this.overridePendingTransition(R.anim.enter_from_left, R.anim.exit_to_right);
-//        } else {
-//            MovieDetail.this.overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
-//        }
-
     }
 
 

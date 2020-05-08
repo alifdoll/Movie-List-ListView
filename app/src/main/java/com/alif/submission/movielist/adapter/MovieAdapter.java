@@ -1,18 +1,17 @@
 package com.alif.submission.movielist.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Handler;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +21,7 @@ import com.alif.submission.movielist.R;
 import com.alif.submission.movielist.data.MovieItem;
 import com.alif.submission.movielist.database.MovieDAO;
 import com.alif.submission.movielist.database.MovieDatabase;
+import com.alif.submission.movielist.databinding.ItemMovieBinding;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
@@ -35,7 +35,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ListViewHold
     private Context mContext;
     private MovieDAO database;
     private Handler handler = new Handler();
-//    private ItemMovieBinding binding;
+    private ItemMovieBinding binding;
 
     public void setData(Context context, List<MovieItem> movies, OnActionListener onActionListener) {
         listOfMovie.clear();
@@ -59,8 +59,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ListViewHold
     @Override
     public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_movie,parent,false);
-//        LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//        binding = ItemMovieBinding.inflate(inflater);
         return new ListViewHolder(view);
     }
 
@@ -74,10 +72,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ListViewHold
                 int a = MovieDatabase.getInstance(mContext)
                         .getMovieDao()
                         .getMovieId(movie.getId());
-                Log.d("MDB", "Thread Name : " + Thread.currentThread().getName());
-                Log.d("MDB", "Favorite Movie : " + movie.getTitle() + " " + a);
                 movie.setFavorite(movie.getId() == a);
-                Log.d("MDB", "MOVIE IS FAV : " + movie.getTitle() + " " + movie.isFavorite());
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
@@ -89,29 +84,24 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ListViewHold
             }
         }).start();
 
-        Log.d("MDB", "BUTTON MOVIE IS FAV : " + movie.getTitle() + " " + movie.isFavorite());
-
         holder.btnAddFav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (movie.isFavorite()) {
-                    Toast.makeText(holder.itemView.getContext(), "Removed To Favorite " + movie.getTitle(), Toast.LENGTH_SHORT).show();
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
-                            MovieItem movieItem = database.findMovieById(movie.getId());
-                            database.deleteMovie(movieItem);
                             handler.post(new Runnable() {
                                 @Override
                                 public void run() {
                                     listener.onDeleteFromFavorite(position);
                                 }
                             });
+                            MovieItem movieItem = database.findMovieById(movie.getId());
+                            database.deleteMovie(movieItem);
                         }
                     }).start();
-//                    listener.onDeleteFromFavorite(position);
                 } else {
-                    Toast.makeText(holder.itemView.getContext(), "Added From Favorite", Toast.LENGTH_SHORT).show();
                     InsertAsyncTask insertAsyncTask = new InsertAsyncTask();
                     insertAsyncTask.execute(movie);
                 }
@@ -159,6 +149,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ListViewHold
         }
     }
 
+    @SuppressLint("StaticFieldLeak")
     class InsertAsyncTask extends AsyncTask<MovieItem, Void, Void> {
 
         @Override
@@ -170,37 +161,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ListViewHold
 
             return null;
         }
-    }
-
-    class DeleteAsyncTask extends AsyncTask<MovieItem, Void, Void> {
-
-        @Override
-        protected Void doInBackground(MovieItem... movieItems) {
-
-            MovieDatabase.getInstance(mContext)
-                    .getMovieDao()
-                    .deleteById(movieItems[0].getId());
-            return null;
-        }
-    }
-
-    class GetMovieById extends AsyncTask<MovieItem, Void, Void> {
-
-        MovieItem check = null;
-
-        @Override
-        protected Void doInBackground(MovieItem... movieItems) {
-
-            check = MovieDatabase.getInstance(mContext)
-                    .getMovieDao()
-                    .findMovieById(movieItems[0].getId());
-            return null;
-        }
-
-//        MovieItem getMovie(MovieItem movieItem){
-//            GetMovieById getMovieById = new GetMovieById();
-//            getMovieById.execute(movieItem);
-//        }
     }
 
 
