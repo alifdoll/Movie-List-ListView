@@ -21,7 +21,6 @@ import com.alif.submission.movielist.R;
 import com.alif.submission.movielist.data.MovieItem;
 import com.alif.submission.movielist.database.MovieDAO;
 import com.alif.submission.movielist.database.MovieDatabase;
-import com.alif.submission.movielist.databinding.ItemMovieBinding;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
@@ -35,7 +34,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ListViewHold
     private Context mContext;
     private MovieDAO database;
     private Handler handler = new Handler();
-    private ItemMovieBinding binding;
 
     public void setData(Context context, List<MovieItem> movies, OnActionListener onActionListener) {
         listOfMovie.clear();
@@ -53,8 +51,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ListViewHold
         notifyItemRangeChanged(position, listOfMovie.size());
     }
 
-
-
     @NonNull
     @Override
     public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -68,7 +64,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ListViewHold
         new Thread(new Runnable() {
             @Override
             public void run() {
-
                 int a = MovieDatabase.getInstance(mContext)
                         .getMovieDao()
                         .getMovieId(movie.getId());

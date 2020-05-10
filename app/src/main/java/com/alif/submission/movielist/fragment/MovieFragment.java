@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,12 +14,12 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.alif.submission.movielist.OnActionListener;
 import com.alif.submission.movielist.R;
 import com.alif.submission.movielist.adapter.MovieAdapter;
 import com.alif.submission.movielist.data.MovieItem;
+import com.alif.submission.movielist.databinding.FragmentMovieBinding;
 import com.alif.submission.movielist.detail.MovieDetail;
 import com.alif.submission.movielist.viewmodel.MovieMainViewModel;
 
@@ -30,7 +29,7 @@ public class MovieFragment extends Fragment implements OnActionListener {
 
     private MovieAdapter adapter;
     private MovieMainViewModel mainViewModel;
-    private ProgressBar progressBar;
+    private FragmentMovieBinding binding;
 
     public MovieFragment() {
 
@@ -47,14 +46,13 @@ public class MovieFragment extends Fragment implements OnActionListener {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        binding = FragmentMovieBinding.bind(view);
 
-        RecyclerView rv = view.findViewById(R.id.rv_movie);
-        progressBar = view.findViewById(R.id.id_progress);
         adapter = new MovieAdapter();
         mainViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(MovieMainViewModel.class);
-        rv.setLayoutManager(new LinearLayoutManager(getActivity()));
-        rv.setAdapter(adapter);
-        rv.addItemDecoration(new DividerItemDecoration(rv.getContext(), DividerItemDecoration.VERTICAL));
+        binding.rvMovie.setLayoutManager(new LinearLayoutManager(getActivity()));
+        binding.rvMovie.setAdapter(adapter);
+        binding.rvMovie.addItemDecoration(new DividerItemDecoration(binding.rvMovie.getContext(), DividerItemDecoration.VERTICAL));
 
         mainViewModel.setMovie();
         showLoading(true);
@@ -71,9 +69,9 @@ public class MovieFragment extends Fragment implements OnActionListener {
 
     private void showLoading(Boolean state) {
         if (state) {
-            progressBar.setVisibility(View.VISIBLE);
+            binding.idProgress.setVisibility(View.VISIBLE);
         } else {
-            progressBar.setVisibility(View.GONE);
+            binding.idProgress.setVisibility(View.GONE);
         }
     }
 

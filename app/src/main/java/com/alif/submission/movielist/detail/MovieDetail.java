@@ -39,11 +39,7 @@ public class MovieDetail extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-
-
-
         MovieItem movie = getIntent().getParcelableExtra(EXTRA_MOVIE);
-
 
         binding.movieName.setText(movie.getTitle());
         binding.movieSynops.setText(movie.getOverview());

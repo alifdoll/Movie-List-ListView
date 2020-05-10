@@ -30,7 +30,7 @@ public class MovieMainViewModel extends ViewModel {
                 + API_KEY
                 + "&language=en-US";
 
-        final String POSTER_PATH = "https://image.tmdb.org/t/p/", POSTER_SIZE = "original";
+        final String POSTER_PATH = "https://image.tmdb.org/t/p/", POSTER_SIZE = "w780";
 
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(URL, null, new AsyncHttpResponseHandler() {
@@ -68,7 +68,7 @@ public class MovieMainViewModel extends ViewModel {
 
     public void setShow() {
         final String URL = "https://api.themoviedb.org/3/discover/tv?api_key=" + API_KEY + "&language=en-US";
-        final String POSTER_PATH = "https://image.tmdb.org/t/p/", POSTER_SIZE = "original";
+        final String POSTER_PATH = "https://image.tmdb.org/t/p/", POSTER_SIZE = "w780";
 
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(URL, null, new AsyncHttpResponseHandler() {
