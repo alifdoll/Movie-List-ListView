@@ -12,17 +12,19 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.alif.submission.movielist.fragment.FavoriteFragment;
 import com.alif.submission.movielist.fragment.MovieFragment;
+import com.alif.submission.movielist.fragment.SearchFragment;
 import com.alif.submission.movielist.fragment.ShowFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
+        bottomNavigationView = findViewById(R.id.nav_view);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -65,17 +67,41 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    private void setupSearch(SearchView searchView) {
+    private void setupSearch(final SearchView searchView) {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-
-
+                searchView.clearFocus();
                 return false;
             }
 
             @Override
-            public boolean onQueryTextChange(String newText) {
+            public boolean onQueryTextChange(String query) {
+                String type;
+                if (query.length() > 0) {
+                    if (bottomNavigationView.getSelectedItemId() == R.id.nav_movie) {
+                        type = "movie";
+                    } else if (bottomNavigationView.getSelectedItemId() == R.id.nav_show) {
+                        type = "show";
+                    } else {
+                        type = "fav";
+                    }
+
+                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                    Bundle bundle = new Bundle();
+                    bundle.putString(SearchFragment.QUERY, query);
+                    bundle.putString(SearchFragment.TYPE, type);
+
+                    SearchFragment searchFragment = new SearchFragment();
+                    searchFragment.setArguments(bundle);
+                    transaction.replace(R.id.nav_host_fragment, searchFragment);
+                    transaction.commit();
+                } else {
+                    bottomNavigationView.getMenu().setGroupCheckable(0, true, true);
+                    bottomNavigationView.getMenu().getItem(0).setChecked(true);
+                    loadFragment(new MovieFragment());
+                }
+
                 return false;
             }
         });

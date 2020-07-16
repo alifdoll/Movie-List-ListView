@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
-    viewBinding.enabled = true;
+    viewBinding.enabled = true
     defaultConfig {
         applicationId "com.alif.submission.movielist"
         minSdkVersion 21
@@ -12,6 +12,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "API_KEY", '"84d428a871b71fb6a4ac9277635051b1"')
+        buildConfigField("String", "POSTER_PATH", '"https://image.tmdb.org/t/p/"')
     }
     buildTypes {
         release {

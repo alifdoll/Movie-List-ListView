@@ -31,10 +31,10 @@ public class MovieFragment extends Fragment implements OnActionListener {
     private MovieMainViewModel mainViewModel;
     private FragmentMovieBinding binding;
 
+
     public MovieFragment() {
 
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -66,6 +66,7 @@ public class MovieFragment extends Fragment implements OnActionListener {
             }
         });
     }
+
 
     private void showLoading(Boolean state) {
         if (state) {
