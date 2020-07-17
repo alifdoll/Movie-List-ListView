@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,9 +29,7 @@ import com.alif.submission.movielist.detail.MovieDetail;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class MovieFavoriteFragment extends Fragment implements OnActionListener {
 
     private final List<MovieItem> listOfMovie = new ArrayList<>();
@@ -37,14 +37,13 @@ public class MovieFavoriteFragment extends Fragment implements OnActionListener 
     private TextView textView;
 
     public MovieFavoriteFragment() {
-        // Required empty public constructor
+
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_movie_favorite, container, false);
     }
 
@@ -62,27 +61,29 @@ public class MovieFavoriteFragment extends Fragment implements OnActionListener 
             @Override
             public void run() {
                 Looper.prepare();
+                Handler handler = new Handler();
+
                 listOfMovie.addAll(MovieDatabase.getInstance(getContext())
                         .getMovieDao()
                         .getMovieByType("movie"));
-                Handler handler = new Handler();
 
-                if (listOfMovie.size() <= 0) {
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        noData(false);
+                        adapter.setData(getContext(), listOfMovie, MovieFavoriteFragment.this);
+                    }
+                });
+
+                if (listOfMovie.size() <= 0){
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
                             noData(true);
                         }
                     });
-                } else {
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            noData(false);
-                            adapter.setData(getContext(), listOfMovie, MovieFavoriteFragment.this);
-                        }
-                    });
                 }
+
                 Looper.loop();
             }
         }).start();
@@ -98,6 +99,7 @@ public class MovieFavoriteFragment extends Fragment implements OnActionListener 
     }
 
 
+
     @Override
     public void startActivity(int position) {
         MovieItem movie = listOfMovie.get(position);
@@ -109,5 +111,9 @@ public class MovieFavoriteFragment extends Fragment implements OnActionListener 
     @Override
     public void onDeleteFromFavorite(int position) {
         adapter.deleteFavoriteItem(position);
+        listOfMovie.remove(position);
+        if (listOfMovie.size() == 0){
+            noData(true);
+        }
     }
 }

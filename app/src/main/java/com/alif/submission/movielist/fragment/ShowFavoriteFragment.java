@@ -27,9 +27,7 @@ import com.alif.submission.movielist.detail.MovieDetail;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class ShowFavoriteFragment extends Fragment implements OnActionListener {
 
     private final List<MovieItem> listOfMovie = new ArrayList<>();
@@ -37,14 +35,12 @@ public class ShowFavoriteFragment extends Fragment implements OnActionListener {
     private TextView textView;
 
     public ShowFavoriteFragment() {
-        // Required empty public constructor
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_show_favorite, container, false);
     }
 
@@ -62,24 +58,26 @@ public class ShowFavoriteFragment extends Fragment implements OnActionListener {
             @Override
             public void run() {
                 Looper.prepare();
-                listOfMovie.addAll(MovieDatabase.getInstance(getContext())
-                        .getMovieDao()
-                        .getMovieByType("show"));
                 Handler handler = new Handler();
 
-                if (listOfMovie.size() <= 0) {
+
+                listOfMovie.addAll(MovieDatabase.getInstance(getContext())
+                        .getMovieDao()
+                        .getMovieByType("movie"));
+
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        noData(false);
+                        adapter.setData(getContext(), listOfMovie, ShowFavoriteFragment.this);
+                    }
+                });
+
+                if (listOfMovie.size() <= 0){
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
                             noData(true);
-                        }
-                    });
-                } else {
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            noData(false);
-                            adapter.setData(getContext(), listOfMovie, ShowFavoriteFragment.this);
                         }
                     });
                 }
@@ -108,5 +106,8 @@ public class ShowFavoriteFragment extends Fragment implements OnActionListener {
     @Override
     public void onDeleteFromFavorite(int position) {
         adapter.deleteFavoriteItem(position);
+        if (listOfMovie.size() == 0){
+            noData(true);
+        }
     }
 }
