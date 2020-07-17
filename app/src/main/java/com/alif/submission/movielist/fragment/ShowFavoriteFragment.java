@@ -106,6 +106,7 @@ public class ShowFavoriteFragment extends Fragment implements OnActionListener {
     @Override
     public void onDeleteFromFavorite(int position) {
         adapter.deleteFavoriteItem(position);
+        listOfMovie.remove(position);
         if (listOfMovie.size() == 0){
             noData(true);
         }
