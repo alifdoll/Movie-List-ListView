@@ -63,7 +63,7 @@ public class ShowFavoriteFragment extends Fragment implements OnActionListener {
 
                 listOfMovie.addAll(MovieDatabase.getInstance(getContext())
                         .getMovieDao()
-                        .getMovieByType("movie"));
+                        .getMovieByType("show"));
 
                 handler.post(new Runnable() {
                     @Override
