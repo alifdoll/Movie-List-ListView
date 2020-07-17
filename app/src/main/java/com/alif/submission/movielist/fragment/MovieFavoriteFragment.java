@@ -24,6 +24,7 @@ import com.alif.submission.movielist.R;
 import com.alif.submission.movielist.adapter.MovieAdapter;
 import com.alif.submission.movielist.data.MovieItem;
 import com.alif.submission.movielist.database.MovieDatabase;
+import com.alif.submission.movielist.databinding.FragmentMovieFavoriteBinding;
 import com.alif.submission.movielist.detail.MovieDetail;
 
 import java.util.ArrayList;
@@ -32,6 +33,7 @@ import java.util.List;
 
 public class MovieFavoriteFragment extends Fragment implements OnActionListener {
 
+    private FragmentMovieFavoriteBinding binding;
     private final List<MovieItem> listOfMovie = new ArrayList<>();
     private MovieAdapter adapter;
     private TextView textView;
@@ -50,12 +52,13 @@ public class MovieFavoriteFragment extends Fragment implements OnActionListener 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        textView = view.findViewById(R.id.no_data);
-        RecyclerView rv = view.findViewById(R.id.rv_movie_fav);
+        binding = FragmentMovieFavoriteBinding.bind(view);
         adapter = new MovieAdapter();
-        rv.setLayoutManager(new LinearLayoutManager(getActivity()));
-        rv.setAdapter(adapter);
-        rv.addItemDecoration(new DividerItemDecoration(rv.getContext(), DividerItemDecoration.VERTICAL));
+
+
+        binding.rvMovieFav.setAdapter(adapter);
+        binding.rvMovieFav.setLayoutManager(new LinearLayoutManager(getActivity()));
+        binding.rvMovieFav.addItemDecoration(new DividerItemDecoration(binding.rvMovieFav.getContext(), DividerItemDecoration.VERTICAL));
 
         new Thread(new Runnable() {
             @Override
@@ -91,10 +94,9 @@ public class MovieFavoriteFragment extends Fragment implements OnActionListener 
 
     private void noData(Boolean state) {
         if (state) {
-            textView.setVisibility(View.VISIBLE);
-            textView.setText(R.string.no_data);
+            binding.noData.setVisibility(View.VISIBLE);
         } else {
-            textView.setVisibility(View.GONE);
+            binding.noData.setVisibility(View.GONE);
         }
     }
 
