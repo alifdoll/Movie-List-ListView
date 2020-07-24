@@ -97,8 +97,12 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ListViewHold
                         }
                     }).start();
                 } else {
-                    InsertAsyncTask insertAsyncTask = new InsertAsyncTask();
-                    insertAsyncTask.execute(movie);
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            database.insert(movie);
+                        }
+                    }).start();
                 }
                 movie.setFavorite(!movie.isFavorite());
                 holder.btnAddFav.setText(movie.isFavorite() ? R.string.remove_from_fav : R.string.add_to_fav);
